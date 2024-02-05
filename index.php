@@ -1,5 +1,11 @@
 <?php
 
+if($_SERVER['DEPLOYMENT_ENV']==="DEV") {
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+}
+
 require '../vendor/autoload.php';
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
